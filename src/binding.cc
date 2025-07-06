@@ -396,7 +396,7 @@ NAN_METHOD(node_ogg_packet_replace_buffer) {
 }
 
 
-NAN_MODULE_INIT(Initialize) {
+static NAN_MODULE_INIT(Initialize) {
   Nan::HandleScope scope;
 
   /* sizeof's */

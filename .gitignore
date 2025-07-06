@@ -2,3 +2,5 @@
 /node_modules
 /*.ogg
 /?.js
+/out/
+/prebuilds/

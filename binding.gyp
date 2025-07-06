@@ -37,5 +37,14 @@
         }],
       ],
     },
+    {
+      'target_name': 'action_after_build',
+      'type': 'none',
+      'dependencies': ['ogg'],
+      'copies': [{
+        'files': ['<(PRODUCT_DIR)/ogg.node'],
+        'destination': 'out',
+      }],
+    },
   ],
 }
