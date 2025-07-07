@@ -27,7 +27,7 @@
     "index.d.ts"
   ],
   "scripts": {
-    "install": "prebuild-install || (node-gyp rebuild --release -j max && node-gyp clean)",
+    "install": "prebuild-install || (npm run rebuild && node-gyp clean)",
     "rebuild": "node-gyp rebuild --release -j max",
     "test": "mocha --reporter spec"
   },

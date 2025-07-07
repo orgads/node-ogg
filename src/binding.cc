@@ -26,7 +26,7 @@
 #include "node_buffer.h"
 #include "node_pointer.h"
 
-#include "ogg/ogg.h"
+#include <ogg/ogg.h>
 
 using namespace v8;
 using namespace node;

@@ -9,7 +9,7 @@
 {
   'variables': {
     'target_arch%': 'ia32', # built for a 32-bit CPU by default
-    'libogg_build': '<(PRODUCT_DIR)/../../build/libogg',
+    'libogg_build': '<(PRODUCT_DIR)/libogg',
   },
   'target_defaults': {
     'default_configuration': 'Debug',
@@ -53,13 +53,12 @@
       'actions': [
         {
           'action_name': 'cmake_configure',
-          'inputs': ['deps/libogg/CMakeLists.txt'],
+          'inputs': ['libogg/CMakeLists.txt'],
           'outputs': ['<(libogg_build)/include/ogg/config_types.h'],
           'action': [
             'cmake',
             '-B', '<(libogg_build)',
-            '-S', 'deps/libogg',
-            '-DCMAKE_BUILD_TYPE=Release'
+            '-S', 'libogg',
           ],
           'message': 'Configuring libogg with cmake'
         }
@@ -71,32 +70,31 @@
       'type': 'static_library',
       'dependencies': ['libogg_cmake_config'],
       'sources': [
-        'deps/libogg/src/framing.c',
-        'deps/libogg/src/bitwise.c',
+        'libogg/src/framing.c',
+        'libogg/src/bitwise.c',
       ],
       'defines': [
         'PIC',
       ],
       'include_dirs': [
-        # platform and arch-specific headers
-        'config/<(OS)/<(target_arch)',
-        'deps/libogg/include',
+        'libogg/include',
         '<(libogg_build)/include',
       ],
       'direct_dependent_settings': {
         'include_dirs': [
-          # platform and arch-specific headers
-          'config/<(OS)/<(target_arch)',
-          'deps/libogg/include',
+          'libogg/include',
           '<(libogg_build)/include',
         ],
       },
     },
-
     {
       'target_name': 'test',
       'type': 'executable',
       'dependencies': [ 'libogg' ],
+      'include_dirs': [
+        'libogg/include',
+        '<(libogg_build)/include',
+      ],
       'sources': [ 'test.c' ]
     },
   ]
