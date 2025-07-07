@@ -13,6 +13,8 @@ jobs:
       fail-fast: false
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: true
       - name: Use Node.js ${{ matrix.node }}
         uses: actions/setup-node@v4
         with:
@@ -45,6 +47,8 @@ jobs:
     container: node:${{ matrix.node }}-alpine
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: true
       - name: install build deps
         run: |
           apk add g++ make python3

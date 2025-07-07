@@ -14,6 +14,8 @@ jobs:
         os: [ ubuntu-latest, macos-latest, windows-latest ]
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: true
       - name: Use nodejs
         uses: actions/setup-node@v4
         with:
@@ -45,6 +47,8 @@ jobs:
     container: node:alpine
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: true
       - name: Use nodejs
         uses: actions/setup-node@v4
         with:
