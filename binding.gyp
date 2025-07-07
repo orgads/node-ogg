@@ -10,7 +10,7 @@
         'src/binding.cc',
       ],
       'dependencies': [
-        'deps/libogg/libogg.gyp:libogg',
+        'libogg.gyp:libogg',
       ],
       'conditions': [
         ['OS=="mac" or OS=="linux"', {
