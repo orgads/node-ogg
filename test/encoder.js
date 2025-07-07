@@ -5,7 +5,6 @@ var path = require('path');
 var Encoder = ogg.Encoder;
 var assert = require('assert');
 var ogg_packet = require('ogg-packet');
-var fixtures = path.resolve(__dirname, 'fixtures');
 
 describe('Encoder', function () {
 
