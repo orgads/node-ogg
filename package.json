@@ -16,13 +16,15 @@
     "url": "https://github.com/orgads/node-ogg"
   },
   "main": "./index.js",
+  "types": "./index.d.ts",
   "files": [
     "*.gyp",
     "deps/libogg",
     "!deps/libogg/doc",
     "lib",
     "src",
-    "index.js"
+    "index.js",
+    "index.d.ts"
   ],
   "scripts": {
     "install": "prebuild-install || (node-gyp rebuild --release -j max && node-gyp clean)",
